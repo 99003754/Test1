@@ -1,0 +1,20 @@
+name: Run_Program
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      
+    - name: run g++
+      run: g++ test.cpp
+    - name: run output
+      run: ./a.out
